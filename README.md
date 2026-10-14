@@ -1,56 +1,59 @@
 # Pennywise LensText AI 🖼️✨
 
-An accessible (WCAG AAA compliant), high-contrast AI image captioning and alt-text generation suite. Designed to streamline digital publishing, web accessibility workflows, and automated SEO image indexing using Hugging Face BLIP and Gradio.
+An accessible (WCAG AAA compliant), high-contrast AI image captioning and alt-text generation suite. Designed to streamline digital publishing, web accessibility workflows, and automated SEO image indexing using Hugging Face BLIP.
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
-![Gradio](https://img.shields.io/badge/Gradio-5.0+-orange.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-Cloud-FF4B4B.svg)
+![Gradio](https://img.shields.io/badge/Gradio-Local%20Suite-orange.svg)
 ![Transformers](https://img.shields.io/badge/HuggingFace-BLIP-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
----
-
-## 🌟 Key Features
-
-- **Single Photo Parsing:** Drag-and-drop file upload, live webcam capture, or clipboard pasting with automated BLIP caption generation.
-- **Batch Web Extractor:** Automated web scraper using BeautifulSoup4 to extract all images from a web URL, auto-generate captions, and display a downloadable log file (`webpage_captions.txt`).
-- **WCAG AAA Accessibility:** High-contrast Navy/Slate theme (`#1e293b`) with clear typography, accessible tab navigation, and optimized readability across input/output components.
-- **Local Brand Integration:** Configurable logo display (`icon.png`) with automatic fallbacks for open-source distributions.
+🌐 **Live Web Application:** [https://pennywise-lens2text-ai.streamlit.app/](https://pennywise-lens2text-ai.streamlit.app/)
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Two Ways to Run
 
-- **Framework:** Python 3.11+, Gradio
-- **AI Model:** `Salesforce/blip-image-captioning-base` (PyTorch & Hugging Face Transformers)
-- **Web Scraping:** BeautifulSoup4, Requests
-- **Image Processing:** Pillow (PIL)
+This repository supports both zero-install web usage and local execution:
+
+1. **Live Cloud App (Streamlit Interface):** Access the web app instantly via [Streamlit Cloud](https://pennywise-lens2text-ai.streamlit.app/). Powered by `streamlit_app.py`.
+2. **Local Studio Suite (Gradio Interface):** Run the standalone desktop UI locally with native webcam, clipboard, and WCAG AAA styling controls. Powered by `app.py`.
 
 ---
 
-## 🚀 Quickstart Guide
+## 🛠️ Local Installation & Setup
 
-### 1. Prerequisites
-Ensure you have Python 3.11 or higher installed on your system.
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/JeremyPillon/ai-image-captioner.git](https://github.com/JeremyPillon/ai-image-captioner.git)
+cd ai-image-captioner
 
-### 2. Installation & Setup
-Bash
+2. Set Up Virtual Environment
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+
+3. Install Dependencies
 pip install -r requirements.txt
 
-3. Running the App locally
-Start the Gradio application:
-Bash
+4. Choose Your Interface to Launch
+Option A: Launch Local Gradio Studio (Desktop/Local Mode)
 python app.py
+Opens locally at http://127.0.0.1:7860.
 
-Open your browser and navigate to http://127.0.0.1:7860.
+Option B: Launch Local Streamlit Web UI
+streamlit run streamlit_app.py
+Opens locally at http://localhost:8501.
 
 📁 Repository Structure
-Plaintext
 ai-image-captioner/
-├── app.py              # Main Gradio application code
-├── requirements.txt    # Python dependencies
-├── icon.png            # App header logo icon
-├── README.md           # Project documentation
-└── .gitignore          # Git ignore rules for venv & cache
-
-📜 License
-This project is open-source and available under the MIT License.
+├── app.py              # Local Gradio application (WCAG AAA custom theme)
+├── streamlit_app.py    # Streamlit Cloud entrypoint (Live web interface)
+├── requirements.txt    # Shared Python dependencies
+├── icon.png            # App header branding asset
+├── README.md           # Documentation
+└── .gitignore          # Version control ignore rules
