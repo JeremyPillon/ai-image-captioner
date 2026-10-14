@@ -33,31 +33,18 @@ An accessible (WCAG AAA compliant), high-contrast AI image captioning and alt-te
 Ensure you have Python 3.11 or higher installed on your system.
 
 ### 2. Installation & Setup
-
-Clone the repository and navigate into the project directory:
-```bash
-git clone [https://github.com/JeremyPillon/ai-image-captioner.git](https://github.com/JeremyPillon/ai-image-captioner.git)
-cd ai-image-captioner
-
-Create and activate a virtual environment:
-# Windows
-python -m venv venv
-.\venv\Scripts\activate
-
-# macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
-
-Install the dependencies:
+Bash
 pip install -r requirements.txt
 
 3. Running the App locally
 Start the Gradio application:
+Bash
 python app.py
 
 Open your browser and navigate to http://127.0.0.1:7860.
 
 📁 Repository Structure
+Plaintext
 ai-image-captioner/
 ├── app.py              # Main Gradio application code
 ├── requirements.txt    # Python dependencies
