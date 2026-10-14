@@ -1,98 +1,69 @@
----
-title: Pennywise LensText AI
-emoji: 🖼️
-colorFrom: gray
-colorTo: black
-sdk: gradio
-sdk_version: 4.35.0
-app_file: app.py
-pinned: false
-license: mit
----
+# Pennywise LensText AI 🖼️✨
 
-# 🖼️ Pennywise LensText AI
+An accessible (WCAG AAA compliant), high-contrast AI image captioning and alt-text generation suite. Designed to streamline digital publishing, web accessibility workflows, and automated SEO image indexing using Hugging Face BLIP and Gradio.
 
-An automated, enterprise-grade AI image captioning and alt-text generation engine designed for digital publishing, news media, and e-commerce platforms.
-
-Built on **Salesforce BLIP (Bootstrapping Language-Image Pre-training)** and **Gradio**, this tool streamlines editorial workflows, accelerates search engine optimization (SEO), and ensures full **WCAG 2.1 accessibility compliance**.
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Gradio](https://img.shields.io/badge/Gradio-5.0+-orange.svg)
+![Transformers](https://img.shields.io/badge/HuggingFace-BLIP-yellow.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
 
 ## 🌟 Key Features
 
-- **Single Photo Drag & Drop:** Local image upload for instant, precise alt-text creation.
-- **Batch Web Scraping & Captioning:** Extract and caption images from any target webpage URL in a single pass.
-- **Downloadable Logs:** Automatically generates a `.txt` file containing image URLs and generated captions for easy editorial review.
-- **Custom Minimalist UI:** Styled with a clean, high-contrast dark theme.
-- **Enterprise Ready:** Fully type-hinted, PEP 8 compliant, and containerized for cloud or Kubernetes deployment.
+- **Single Photo Parsing:** Drag-and-drop file upload, live webcam capture, or clipboard pasting with automated BLIP caption generation.
+- **Batch Web Extractor:** Automated web scraper using BeautifulSoup4 to extract all images from a web URL, auto-generate captions, and display a downloadable log file (`webpage_captions.txt`).
+- **WCAG AAA Accessibility:** High-contrast Navy/Slate theme (`#1e293b`) with clear typography, accessible tab navigation, and optimized readability across input/output components.
+- **Local Brand Integration:** Configurable logo display (`icon.png`) with automatic fallbacks for open-source distributions.
 
 ---
 
-## 📐 System Architecture
+## 🛠️ Tech Stack
 
-```text
-[ Target Web Page / Local Image ]
-               │
-               ▼
-   [ BeautifulSoup4 / PIL ]
-               │
-               ▼
- [ BLIP Vision Transformer Model ]
-               │
-               ▼
-  [ Generated Alt Text & Caption ]
-               │
-  ┌────────────┴────────────┐
-  ▼                         ▼
-[ Web UI ]       [ Downloadable Report (.txt) ]
+- **Framework:** Python 3.11+, Gradio
+- **AI Model:** `Salesforce/blip-image-captioning-base` (PyTorch & Hugging Face Transformers)
+- **Web Scraping:** BeautifulSoup4, Requests
+- **Image Processing:** Pillow (PIL)
 
-1. Web Accessibility (WCAG 2.1)
-Screen readers rely on descriptive alt text to assist visually impaired readers. Pennywise LensText AI automates this process to ensure online media meets global accessibility standards.
+---
 
-2. Search Engine Optimization (SEO)
-Search engine crawlers index image alt attributes to rank visual content. Automated keyword-rich captioning helps drive organic search traffic to web articles and media catalogs.
+## 🚀 Quickstart Guide
 
-🛠️ Local Installation & Development
-Prerequisites
-Python 3.10+
+### 1. Prerequisites
+Ensure you have Python 3.11 or higher installed on your system.
 
-Virtual environment (venv)
+### 2. Installation & Setup
 
-Setup Instructions
-# Clone the repository
+Clone the repository and navigate into the project directory:
+```bash
 git clone [https://github.com/JeremyPillon/ai-image-captioner.git](https://github.com/JeremyPillon/ai-image-captioner.git)
 cd ai-image-captioner
 
-# Create and activate virtual environment
-# On Linux/macOS:
+Create and activate a virtual environment:
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 
-# On Windows (Command Prompt / PowerShell):
-python -m venv venv
-venv\Scripts\activate
-
-# Install dependencies
+Install the dependencies:
 pip install -r requirements.txt
 
-# Launch application
+3. Running the App locally
+Start the Gradio application:
 python app.py
 
-Access the local web interface at http://127.0.0.1:7860.
+Open your browser and navigate to http://127.0.0.1:7860.
 
-🧪 Code Quality & Testing
-This project adheres to PEP 8 standard conventions and includes automated unit tests.
-# Run linter and code formatter
-flake8 app.py
-black app.py
+📁 Repository Structure
+ai-image-captioner/
+├── app.py              # Main Gradio application code
+├── requirements.txt    # Python dependencies
+├── icon.png            # App header logo icon
+├── README.md           # Project documentation
+└── .gitignore          # Git ignore rules for venv & cache
 
-# Run unit tests
-pytest
-👤 Author
-Jeremy Pillon
-
-Founder & Product Architect | Pennywise 2.0[cite: 1, 2]
-
-GitHub: github.com/JeremyPillon[cite: 1]
-
-LinkedIn: linkedin.com/in/jeremy-pillon-a407b520[cite: 1]
+📜 License
+This project is open-source and available under the MIT License.
