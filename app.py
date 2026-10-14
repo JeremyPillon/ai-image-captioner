@@ -211,4 +211,6 @@ def build_interface() -> gr.Blocks:
 if __name__ == "__main__":
     demo = build_interface()
     demo.launch()
+    # Enables local testing while allowing cloud servers (Streamlit/Docker) to bind correctly
+    demo.launch(server_name="0.0.0.0", server_port=7860)
     
