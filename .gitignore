@@ -1,7 +1,7 @@
-__pycache__/
-*.pyc
 .env
-venv/
-.pytest_cache/
+*.key
+*.pem
+*.secret
 webpage_captions.txt
-captions.txt
+venv/
+__pycache__/

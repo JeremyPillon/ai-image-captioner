@@ -1,67 +1,65 @@
-# Pennywise LensText AI 🖼️✨
-
+Pennywise LensText AI 🖼️✨
 An accessible (WCAG AAA compliant), high-contrast AI image captioning and alt-text generation suite. Designed to streamline digital publishing, web accessibility workflows, and automated SEO image indexing using Hugging Face BLIP.
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-Cloud-FF4B4B.svg)
-![Gradio](https://img.shields.io/badge/Gradio-Local%20Suite-orange.svg)
-![Transformers](https://img.shields.io/badge/HuggingFace-BLIP-yellow.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+🌐 Live Streamlit App: https://pennywise-lens2text-ai.streamlit.app/
 
-🌐 **Live Web Application:** https://pennywise-lens2text-ai.streamlit.app/
+🚀 Live Enterprise Kubernetes App: https://pennywise-lens2text-ai.2fzp01bj017h.ca-tor.codeengine.appdomain.cloud
 
----
+🚧 Work in Progress: This project is actively under development! Check back regularly or ⭐ Star / Follow this repository to stay updated on upcoming feature releases.
 
-## 🚀 Two Ways to Run
+🚀 Enterprise Deployment Options
+This application is built for multi-cloud and containerized deployment models:
 
-This repository supports both zero-install web usage and local execution:
+Kubernetes Serverless (IBM Cloud Code Engine): Containerized deployment running on managed Kubernetes infrastructure. Pulled directly from IBM Container Registry (ca.icr.io) with automated scaling and secret management.
 
-1. **Live Cloud App (Streamlit Interface):** Access the web app instantly via [Streamlit Cloud](https://pennywise-lens2text-ai.streamlit.app/). Powered by `streamlit_app.py`.
-2. **Local Studio Suite (Gradio Interface):** Run the standalone desktop UI locally with native webcam, clipboard, and WCAG AAA styling controls. Powered by `app.py`.
+Streamlit Community Cloud: Zero-install web application running directly off the production repository branch (streamlit_app.py).
 
----
+Local Desktop Studio (Gradio Interface): Standalone local desktop UI running app.py with custom high-contrast WCAG AAA styling controls.
 
-## 🛠️ Local Installation & Setup
-
-### 1. Clone the Repository
+🛠️ Local Installation & Running with Docker
+Run via Local Python Environment
 git clone [https://github.com/JeremyPillon/ai-image-captioner.git](https://github.com/JeremyPillon/ai-image-captioner.git)
+
 cd ai-image-captioner
 
-### 2. Set Up Virtual Environment
-On Windows:
 python -m venv venv
-.\venv\Scripts\activate
 
-On macOS / Linux:
-python3 -m venv venv
-source venv/bin/activate
+.\venv\Scripts\activate (On macOS/Linux: source venv/bin/activate)
 
-### 3. Install Dependencies
 pip install -r requirements.txt
 
-### 4. Choose Your Interface to Launch
+python app.py
 
-* **Option A: Launch Local Gradio Studio (Desktop/Local Mode)**
-  python app.py
-  (Opens locally at [http://127.0.0.1:7860](http://127.0.0.1:7860))
+Run via Docker Container
+docker build -t pennywise-lenstext-ai:v1 .
 
-* **Option B: Launch Local Streamlit Web UI**
-  streamlit run streamlit_app.py
-  (Opens locally at http://localhost:8501)
+docker run -p 8080:8080 pennywise-lenstext-ai:v1
 
----
+🗺️ Product Roadmap & Upcoming Features
+⚡ Enter Key Auto-Submission: Instant caption generation upon pressing Enter in input fields.
 
-## 📁 Repository Structure
+📁 Bulk Local Directory Ingestion: Multi-image file uploads and direct local directory path scanning.
 
-* `app.py` - Local Gradio application with WCAG AAA custom theme
-* `streamlit_app.py` - Streamlit Cloud entrypoint for the live web application
-* `requirements.txt` - Shared Python dependencies
-* `icon.png` - App header branding asset
-* `README.md` - Project documentation
-* `.gitignore` - Version control ignore rules
+💾 Universal Export Options: Direct file downloads for generated captions across both single and batch modes.
 
----
+📸 Continuous Accumulation Capture: Sequential webcam/photo accumulation log that preserves captures until explicitly cleared.
 
-## 📜 License
+🧹 Workspace Clear Controls: One-click workspace reset and clear controls.
 
+📁 Repository Structure
+Dockerfile - Multi-stage container build with pre-baked BLIP model weights
+
+.dockerignore - Excludes virtual environments and build cache from image layers
+
+app.py - Local Gradio application (WCAG AAA custom theme)
+
+streamlit_app.py - Streamlit Cloud and IBM Code Engine Kubernetes entry point
+
+requirements.txt - Shared Python dependencies
+
+icon.png - Header branding asset
+
+README.md - Project documentation
+
+📜 License
 This project is open-source and available under the MIT License.
